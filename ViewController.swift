@@ -1,40 +1,52 @@
 //
 //  ViewController.swift
-//  CalculatePrice
+//  GreaterNumber
 //
-//  Created by Jinne,Swarupa on 9/21/23.
+//  Created by Jinne,Swarupa on 8/31/23.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
+
+    @IBOutlet weak var inputOL1: UITextField!
     
+    @IBOutlet weak var inputOL2: UITextField!
     
-    @IBOutlet weak var AmountOutlet: UITextField!
-    
-    @IBOutlet weak var DiscountRateOutlet: UITextField!
-    
-    
-    @IBOutlet weak var DisplayLabel: UILabel!
+    @IBOutlet weak var outputOL: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
-    
-    @IBAction func PriceCalculator(_ sender: UIButton) {
-        //reading the input from amount, discountrate and assigning it to the variables
-        //converting the input to double value
-        //calculating the price after the discount
-        var inputAmount = Double(AmountOutlet.text!) ?? 0
-        var inputDiscountRate = Double(DiscountRateOutlet.text!) ?? 0
-        var Discount = (inputDiscountRate / inputAmount) * 100
-        var result = inputAmount - Discount
+    @IBAction func greatestNumber(_ sender: UIButton) {
         
-        DisplayLabel.text! = "The discount is \(result)"
+        //read the input and assign it to the variable
+        //convert the string to interger
+        //check if the first value greater than second value
+        //print the greatest
+        var input1 = Int(inputOL1.text!)
+        var input2 = Int(inputOL2.text!)
+        //int input1 = Integer.parseInt(NUM1)
+        //int input1 = Integer.parseInt(NUM2)
+        
+    
+        
+        if(input1! > input2!){
+            outputOL.text = ("\(input1!) is the greatest number")
+        }
+        else if(input1! < input2!
+        ){
+            outputOL.text = ("\(input2!), is the greatest number")
+            
+        }
+        else{
+            outputOL.text = ("Both the numbers are equal")
+        }
         
     }
     
+
 }
 
